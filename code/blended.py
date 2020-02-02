@@ -2,16 +2,17 @@ from skimage.filters import gaussian
 from skimage.transform import rescale
 
 def pyramid_down(image,sigma=1):
-    return rescale(gaussian(image,sigma), 0.5)
+    return rescale(gaussian(image,sigma,multichannel=True),0.5,multichannel=True)
 
 def pyramid_up(image,sigma=1):
-    return rescale(gaussian(image,sigma), 2)
+    return rescale(gaussian(image,sigma,multichannel=True),2,multichannel=True)
 
 def gaussian_pyramid(image,pyramid_size,sigma=1):
     pyramid = []
     for i in range(pyramid_size):
         gaus = pyramid_down(image,sigma)
         pyramid.append(gaus)
+        image = gaus
     return pyramid
 
 def laplacian_pyramid(image,pyramid_size,sigma=1):
