@@ -21,7 +21,7 @@ input("<Hit Enter To Close>")
 plt.close(fig)
 
 im = hybrid_im.copy()
-for i in range(4):
+for i in range(6):
     im = pyramid_down(im,sigma=1)
     imsave(path.join('results',f'pyramid_{i+1}.png'),im)
 
