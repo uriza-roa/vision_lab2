@@ -2,7 +2,7 @@
 
 This are the results of the 2nd laboratory of the computer vision course at Uniandes 202010
 
-##Original images
+## Original images
 
 Andrés                |  Mafe
 :--------------------:|:-------------------:
